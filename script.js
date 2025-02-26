@@ -10,6 +10,8 @@ const percentaje = document.querySelector("#percentaje");
 const negative = document.querySelector("#negative");
 const equal = document.querySelector("#equal");
 
+
+//probando eventos
 numbers.forEach((number) => {
     number.addEventListener("click", () => {
         main.textContent = number.textContent;
