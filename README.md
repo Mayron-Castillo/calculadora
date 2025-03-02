@@ -1,6 +1,6 @@
-# Calculadora (En proceso)
+# Calculadora
 
-Avance de calculadora, subido en Netlify.
+Calculadora con todas las funcionalidades, subido en Netlify.
 
 🔗 [Ver el sitio en Netlify](https://calculadora-mayron.netlify.app/)
 
