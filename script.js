@@ -67,24 +67,26 @@ add.addEventListener("click", () => {
 equal.addEventListener("click", () => {
     if (firstNumber !== 0 && operator) {
         let secondNumber = Number(main.textContent);
+        let result;
 
         if (operator === "*") {
-            main.textContent = firstNumber * secondNumber;
+            result = firstNumber * secondNumber;
         }
         if (operator === "/") {
-            main.textContent = firstNumber / secondNumber;
+            result = firstNumber / secondNumber;
         }
         if (operator === "-") {
-            main.textContent = firstNumber - secondNumber;
+            result = firstNumber - secondNumber;
         }
         if (operator === "+") {
-            main.textContent = firstNumber + secondNumber;
+            result= firstNumber + secondNumber;
         }
         if (operator === "%") {
-            main.textContent = firstNumber % secondNumber;
+            result = firstNumber % secondNumber;
         }
 
-        // Reiniciar variables después de calcular
+        main.textContent = result.toFixed(2);
+
         firstNumber = 0;
         operator = '';
     }
