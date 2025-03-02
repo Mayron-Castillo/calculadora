@@ -85,7 +85,12 @@ equal.addEventListener("click", () => {
             result = firstNumber % secondNumber;
         }
 
-        main.textContent = result.toFixed(2);
+        // Si el resultado es un número entero, no agregar decimales
+        if (Number.isInteger(result)) {
+            main.textContent = result;
+        } else {
+            main.textContent = result.toFixed(2);
+        }
 
         firstNumber = 0;
         operator = '';
