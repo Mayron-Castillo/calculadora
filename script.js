@@ -10,13 +10,21 @@ const percentaje = document.querySelector("#percentaje");
 const negative = document.querySelector("#negative");
 const equal = document.querySelector("#equal");
 
+let firstNumber = 0;
+let operator = " ";
 
 //probando eventos
 numbers.forEach((number) => {
     number.addEventListener("click", () => {
-        main.textContent = number.textContent;
+        if (main.textContent === "0") {
+            main.textContent = number.textContent;
+            return;
+        }
+
+        main.textContent += number.textContent;
     });
 });
+
 
 reset.addEventListener("click", () => {
     main.textContent = 0;
@@ -27,29 +35,60 @@ negative.addEventListener("click", () => {
 });
 
 percentaje.addEventListener("click", () => {
-    main.textContent = Number(main.textContent) / 100;
+    firstNumber = Number(main.textContent);
+    operator = "%";
+    main.textContent = "";
 });
 
 divide.addEventListener("click", () => {
-    main.textContent = Number(main.textContent) / Number(main.textContent);
+    firstNumber = Number(main.textContent);
+    operator = "/";
+    main.textContent = "";
 });
 
 multiply.addEventListener("click", () => {
-    main.textContent = Number(main.textContent) * Number(main.textContent);
+    firstNumber = Number(main.textContent);
+    operator = "*";
+    main.textContent = "";
 });
 
 subtract.addEventListener("click", () => {
-    main.textContent = Number(main.textContent) - Number(main.textContent);
+    firstNumber = Number(main.textContent);
+    operator = "-";
+    main.textContent = "";
 });
 
 add.addEventListener("click", () => {
-    main.textContent = Number(main.textContent) + Number(main.textContent);
+    firstNumber = Number(main.textContent);
+    operator = "+";
+    main.textContent = "";
 });
 
 equal.addEventListener("click", () => {
-    main.textContent = Number(main.textContent);
-});
+    if (firstNumber !== 0 && operator) {
+        let secondNumber = Number(main.textContent);
 
+        if (operator === "*") {
+            main.textContent = firstNumber * secondNumber;
+        }
+        if (operator === "/") {
+            main.textContent = firstNumber / secondNumber;
+        }
+        if (operator === "-") {
+            main.textContent = firstNumber - secondNumber;
+        }
+        if (operator === "+") {
+            main.textContent = firstNumber + secondNumber;
+        }
+        if (operator === "%") {
+            main.textContent = firstNumber % secondNumber;
+        }
+
+        // Reiniciar variables después de calcular
+        firstNumber = 0;
+        operator = '';
+    }
+});
 
 
 
