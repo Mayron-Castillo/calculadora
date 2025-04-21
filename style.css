@@ -61,6 +61,15 @@ html, body {
     text-align: right;
 }
 
+.history {
+    background-color: #482773;
+    color: #999;
+    font-size: 1.2rem;
+    text-align: right;
+    padding: 10px 20px;
+    margin: 0;
+}
+
 .buttons {
     width: 350px;
     display: grid;
